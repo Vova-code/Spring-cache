@@ -6,6 +6,8 @@ import com.exo2.Exercice2.entity.Etudiant;
 import com.exo2.Exercice2.mapper.EcoleMapper;
 import com.exo2.Exercice2.repository.EcoleRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +18,7 @@ public class EcoleService {
     private EcoleRepository ecoleRepository;
     private EcoleMapper ecoleMapper;
 
+    @Cacheable(value = "ecoles")
     public List<EcoleDto> findAll() {
         return ecoleMapper.toDtos(ecoleRepository.findAll());
     }
@@ -28,9 +31,10 @@ public class EcoleService {
         return ecoleMapper.toDtos(ecoleRepository.findEcolesFromNomEtudiant(nomEtudiant));
     }
 
+    @CachePut(value = "ecoles")
     public EcoleDto save(EcoleDto ecoleDto) {
         Ecole ecole = ecoleMapper.toEntity(ecoleDto);
-        ecole.getEtudiants().stream().forEach(e -> e.setEcole(ecole));
+        ecole.getEtudiants().forEach(e -> e.setEcole(ecole));
         return ecoleMapper.toDto(ecoleRepository.save(ecole));
     }
 }

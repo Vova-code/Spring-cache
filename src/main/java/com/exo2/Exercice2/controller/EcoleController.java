@@ -11,8 +11,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/ecoles")
 public class EcoleController {
-    @Autowired
-    private EcoleService ecoleService;
+    private final EcoleService ecoleService;
+
+    public EcoleController(EcoleService ecoleService) {
+        this.ecoleService = ecoleService;
+    }
 
     @GetMapping
     public ResponseEntity<List<EcoleDto>> findAll() {

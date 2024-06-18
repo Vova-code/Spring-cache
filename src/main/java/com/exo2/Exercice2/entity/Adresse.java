@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "adresse")
+@Table(name = "adresse", indexes = { @Index(name = "city", columnList = "ville"), @Index(name = "postalCode", columnList = "codePostal") })
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

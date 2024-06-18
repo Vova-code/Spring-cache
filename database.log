@@ -1,0 +1,19 @@
+1718721089453|126|statement|select * from information_schema.sequences
+1718721089823|66|statement|create index postalCode on adresse (code_postal)
+1718721090021|38|statement|select * from "public"."adresse" where 1=0
+1718721090190|39|statement|select * from "public"."ecole" where 1=0
+1718721090348|41|statement|select * from "public"."etudiant" where 1=0
+1718721090467|38|statement|select * from "public"."projet" where 1=0
+1718721096017|37|statement|select a1_0.adresse_id,a1_0.code_postal,a1_0.complement_adresse,a1_0.ville from adresse a1_0 offset 0 rows fetch first 2 rows only
+1718721096116|44|statement|select e1_0.ecole_id,e1_0.adresse_id,e1_0.domaine_ecole,e1_0.nom_ecole from ecole e1_0 where e1_0.adresse_id=1
+1718721096197|42|statement|select e1_0.ecole_id,e1_0.adresse_id,e1_0.domaine_ecole,e1_0.nom_ecole from ecole e1_0 where e1_0.adresse_id=2
+1718721096264|43|statement|select count(a1_0.adresse_id) from adresse a1_0
+1718721096331|58|commit|
+1718721118815|39|statement|select a1_0.adresse_id,a1_0.code_postal,a1_0.complement_adresse,a1_0.ville from adresse a1_0 offset 4 rows fetch first 4 rows only
+1718721118854|37|statement|select e1_0.ecole_id,e1_0.adresse_id,e1_0.domaine_ecole,e1_0.nom_ecole from ecole e1_0 where e1_0.adresse_id=5
+1718721118891|36|commit|
+1718721123522|37|statement|select a1_0.adresse_id,a1_0.code_postal,a1_0.complement_adresse,a1_0.ville from adresse a1_0 offset 2 rows fetch first 2 rows only
+1718721123582|59|statement|select e1_0.ecole_id,e1_0.adresse_id,e1_0.domaine_ecole,e1_0.nom_ecole from ecole e1_0 where e1_0.adresse_id=3
+1718721123619|35|statement|select e1_0.ecole_id,e1_0.adresse_id,e1_0.domaine_ecole,e1_0.nom_ecole from ecole e1_0 where e1_0.adresse_id=4
+1718721123659|38|statement|select count(a1_0.adresse_id) from adresse a1_0
+1718721123697|36|commit|
